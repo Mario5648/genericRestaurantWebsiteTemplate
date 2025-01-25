@@ -1,4 +1,78 @@
 
+
+button:hover {
+    cursor: pointer;
+    filter: contrast(0.3);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image-slide-scroll {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.image-visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.pop-on-scroll {
+    opacity: 0; /* Start hidden */
+    transform: scale(1); /* Start at normal size */
+    transition: opacity 0.3s ease-out;
+}
+
+.pop-on-scroll.visible {
+    opacity: 1;
+    animation: pop-effect 0.5s ease-out 1;
+}
+
+@keyframes pop-effect {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.2); /* Pops bigger */
+    }
+    100% {
+        transform: scale(1); /* Returns to normal */
+    }
+}
+
+.slide-down-on-scroll {
+    opacity: 0; /* Start hidden */
+    transform: translateY(-100px); /* Start 100px above */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-down-on-scroll.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); } /* Normal size */
+    50% { transform: scale(1.2); } /* Grows slightly */
+}
+
+.fade-in-on-scroll {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: 0;
@@ -7,6 +81,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        font-family: "Telex", serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .menu-bar {
@@ -54,6 +132,7 @@
 
     .hero-image {
         width: 500px;
+        animation: spin 20s linear infinite;
     }
 
     .about-section-background {
@@ -94,6 +173,7 @@
 
     .about-section-image {
         width: 500px;
+
     }
 
     .about-learn-more {
@@ -168,6 +248,7 @@
         background-color: brown;
         color: white;
         font-size: 20px;
+        animation: pulse 2s ease-in-out infinite;
     }
 
     .clients-say-section-background {
@@ -276,6 +357,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        font-family: "Telex", serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .menu-bar {
@@ -345,6 +430,7 @@
 
     .hero-image {
         width: 80%;
+        animation: spin 20s linear infinite;
     }
 
 
@@ -469,6 +555,8 @@
         background-color: brown;
         color: white;
         font-size: 20px;
+        animation: pulse 2s ease-in-out infinite;
+
     }
 
 
